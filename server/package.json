@@ -13,7 +13,7 @@
         "postject-linux": "npx postject node_executable NODE_SEA_BLOB dist/blob.blob --sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2",
         "genblob": "node --experimental-sea-config sea-config.json",
         "move-products": "move art-gallery-server dist & move art-gallery-server.exe dist & del hello.exe & del node_executable",
-        "package": "npm run compile && npm run bundle && npm run grab-node && npm run copy-node && npm run genblob && npm run postject-win && npm run postject-linux && copy /b hello.exe art-gallery-server.exe && copy /b node_executable art-gallery-server && npm run move-products"
+        "package": "npm run compile && npm run bundle && npm run grab-node && npm run copy-node && npm run genblob && npm run postject-win && npm run genblob && npm run postject-linux && copy /b hello.exe art-gallery-server.exe && copy /b node_executable art-gallery-server && npm run move-products"
     },
     "repository": {
         "type": "git",
