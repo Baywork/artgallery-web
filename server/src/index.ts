@@ -25,10 +25,11 @@ const configureRoutes = (app: Application) => {
         next()
     })
     app.use('/', router)
-    app.use(express.static(path.join(__dirname + devEnvironment ? "../web/out" : "/web")))
+    console.log(`Working in a ${devEnvironment ? "dev" : "prod"} env.`)
+    app.use(express.static(path.join(process.cwd(), devEnvironment ? "../web/out" : "web")))
 
     app.get("/", (req, res) => {
-        res.sendFile("index.html", {root: devEnvironment ? "../web/out" : "./web"})
+        res.sendFile("index.html", {root: path.join(process.cwd(), devEnvironment ? "../web/out" : "web")})
     })
 
     decoratedRoutes.forEach(Route => {
