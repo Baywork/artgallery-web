@@ -1,26 +1,15 @@
-console.log("0")
 import express, {Application} from "express"
 import "@/lib/util/log";
 import {decoratedRoutes} from "@/lib/routing";
 import "@/routes"
-console.log("1")
 import "@/lib/firebase"
-console.log("2")
 import * as firebase from "@/lib/helpers/firebase"
-console.log("3")
 import {isSea} from "node:sea";
 import path from "node:path";
-console.log("4")
 
 const app = express()
 const port = 8080
 const devEnvironment = !isSea();
-console.log("5")
-
-if (!devEnvironment) {
-    require("module").createRequire()
-}
-console.log("6")
 
 app.use(express.json())
 
