@@ -13,7 +13,7 @@ export class Upload {
     }
 
     async post(req: Request, res: Response) {
-        const stat = await put("payments", "test", req.body)
+        const stat = await put("payments", req.body.data.object.id || `ts_${new Date().getUTCMilliseconds()}`, req.body)
         if (stat == -1) {
             res.sendStatus(501)
             return
