@@ -12,19 +12,24 @@ function getWorkspace(): "prod" | "dev" {
 export async function put(path: string, key: string, data: any, workspaceOverride?: undefined | "dev" | "prod") {
     const workspace = workspaceOverride ? workspaceOverride : getWorkspace();
     if (!path.startsWith("dev") && !path.startsWith("prod")) path = `${workspace}/${path}`
-    const docRef = db.collection(`gallery/${path}`).doc(key)
-    const docSnap = await docRef.get()
+    try {
+        const docRef = db.collection(`gallery/${path}`).doc(key)
+        const docSnap = await docRef.get()
 
-    if (docSnap.exists) {
-        if (workspace == "dev") {
-            if (docSnap.data() === data) {
-                throw new Error("doc entry duplicate")
+        if (docSnap.exists) {
+            if (workspace == "dev") {
+                if (docSnap.data() === data) {
+                    throw new Error("doc entry duplicate")
+                }
+                throw new Error("doc already exists")
             }
-            throw new Error("doc already exists")
+            return -1
         }
-        return -1
-    }
 
-    await docRef.set(data)
-    return 0
+        await docRef.set(data)
+        return 0
+    } catch (e) {
+        console.error(e)
+    }
+    return -1
 }

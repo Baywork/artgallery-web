@@ -1,5 +1,6 @@
 import {Application, Request, Response} from "express";
 import {route} from "@/lib/routing";
+import {put} from "@/lib/helpers/firebase";
 
 @route()
 export class Upload {
@@ -11,9 +12,15 @@ export class Upload {
         console.log(`Registered route ${this.route}`)
     }
 
-    post(req: Request, res: Response) {
+    async post(req: Request, res: Response) {
+        const stat = await put("payments", "test", req.body)
+        if (stat == -1) {
+            res.sendStatus(501)
+            return
+        }
         console.log(req.body)
         console.log('received msg on upload')
         res.sendStatus(200)
+        return
     }
 }
