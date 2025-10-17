@@ -28,10 +28,6 @@ const configureRoutes = (app: Application) => {
     console.log(`Working in a ${devEnvironment ? "dev" : "prod"} env.`)
     app.use(express.static(path.join(process.cwd(), devEnvironment ? "../web/out" : "web")))
 
-    app.get("/", (req, res) => {
-        res.sendFile("index.html", {root: path.join(process.cwd(), devEnvironment ? "../web/out" : "web")})
-    })
-
     decoratedRoutes.forEach(Route => {
         const instance = new Route(app)
         // @ts-ignore
