@@ -1,5 +1,7 @@
 import NavBar from "@/components/NavBar";
 import ArtSubmissionForm from "@/components/ArtSubmissionForm";
+import {loadStripe} from "@stripe/stripe-js";
+import DonationModal from "@/components/DonationModal";
 
 export default function Page() {
     return (<div
@@ -11,8 +13,8 @@ export default function Page() {
                     <a>CONTRIBUTE</a>
                 </h1>
             </div>
-            <div>
-                <ArtSubmissionForm/>
+            <div className={"flex flex-col w-fit h-full"}>
+                <DonationModal/>
             </div>
         </main>
         <footer>
