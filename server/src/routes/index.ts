@@ -8,6 +8,7 @@ import "@/routes/payments/checkout"
 import "@/routes/about"
 import "@/routes/contribute"
 import "@/routes/payments/checkout/create"
+import "@/routes/admin/auth"
 import path from "node:path";
 import {isSea} from "node:sea";
 
