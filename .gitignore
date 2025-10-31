@@ -38,6 +38,8 @@ package-lock.json
 
 server/resources/node
 
+resources/out
+
 dist
 build
 distr.zip
