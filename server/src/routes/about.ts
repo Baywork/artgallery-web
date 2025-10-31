@@ -1,19 +1,11 @@
 import {Application, Request, Response} from "express";
 import path from "node:path";
 import {isSea} from "node:sea";
-import {route} from "@/lib/routing"
+import {contentRoute, route} from "@/lib/routing"
+import {ContentRoute} from "@/lib/routing/contentRoute";
 
-@route()
-export class About {
+@contentRoute()
+export class About implements ContentRoute{
     route = "/about"
-    methods = ["get"]
-
-    constructor(app: Application) {
-        app.get(this.route, this.get)
-        console.log(`Registered route ${this.route}`)
-    }
-
-    get(req: Request, res: Response) {
-        res.sendFile("about.html", {root: path.join(process.cwd(), !isSea() ? "../web/out" : "web")})
-    }
+    path = "about"
 }
