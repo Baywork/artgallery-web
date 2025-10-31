@@ -1,6 +1,7 @@
 import * as admin from "firebase-admin/app";
 import * as dotenv from "dotenv"
 import * as sea from "node:sea";
+
 admin
 if (!sea.isSea()) {
     dotenv.config({path: "../.env"})
