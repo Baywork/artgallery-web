@@ -27,6 +27,7 @@
         "@stripe/react-stripe-js": "^5.2.0",
         "@stripe/stripe-js": "^8.1.0",
         "adm-zip": "^0.5.16",
-        "firebase": "^12.3.0"
+        "firebase": "^12.3.0",
+        "sharp": "^0.34.4"
     }
 }

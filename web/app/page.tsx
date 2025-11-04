@@ -13,7 +13,7 @@ export default function Home() {
                 </div>
                 <div className={"grid grid-cols-5 gap-4 w-full"}>
                 {
-                    Array(21).fill(" ").map((val, idx) => <img src={`/IMG_0${idx+683}.jpg`} key={idx}/>)
+                    Array(21).fill(" ").map((val, idx) => <img src={`/IMG_${idx}.jpg`} key={idx}/>)
                 }
                 </div>
             </main>
