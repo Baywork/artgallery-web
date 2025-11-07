@@ -7,7 +7,7 @@ export default function NavBarTarget({title, href, border = ""}: {
     const right = border == "r" || border == "x"
     return (<div className={`h-full zain-light px-2 m-0 box-border`} style={{
         borderWidth: "0",
-        borderColor: "white",
+        borderColor: "var(tertiary)",
         borderStyle: "solid",
         borderLeftWidth: `${left ? "1px" : "0px"}`,
         borderRightWidth: `${right ? "1px" : "0px"}`,

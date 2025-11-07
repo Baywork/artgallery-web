@@ -2,8 +2,8 @@
 @import "tailwindcss";
 
 :root {
-    --background: #ffffff;
-    --foreground: #171717;
+    --background: hsl(31, 100%, 80%);
+    --foreground: hsl(31, 15%, 9%);
     --test-font-a: "DM Serif Text";
     --test-font-b: "Fraunces";
     --test-font-c: "Crimson Pro";
@@ -11,17 +11,23 @@
     --test-font-e: "Stoke";
 }
 
+@theme {
+    --color-contrast: hsl(31, 100%, 35%);
+    --color-secondary: hsl(31, 100%, 85%);
+    --color-tertiary: hsl(31, 100%, 80%);
+}
+
 @theme inline {
     --color-background: var(--background);
     --color-foreground: var(--foreground);
 }
-/*
+
 @media (prefers-color-scheme: dark) {
     :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
+        /*--background: #0a0a0a;
+        --foreground: #ededed;*/
     }
-}*/
+}
 
 body {
     background: var(--background);
