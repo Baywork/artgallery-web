@@ -34,9 +34,8 @@ export default function RootLayout({
         <body
             className={`antialiased flex flex-col justify-between`}
         >
-        <div className={"min-h-[100vh] w-full bg-foreground"}>
+        <div className={"min-h-[100vh] w-full bg-background"}>
             {children}
-            <Footer/>
         </div>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com"/>

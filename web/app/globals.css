@@ -2,8 +2,8 @@
 @import "tailwindcss";
 
 :root {
-    --background: hsl(31, 100%, 80%);
-    --foreground: hsl(31, 15%, 9%);
+    --background: hsl(55, 67%, 99%);
+    --foreground: hsl(18, 100%, 64%);
     --test-font-a: "DM Serif Text";
     --test-font-b: "Fraunces";
     --test-font-c: "Crimson Pro";
@@ -12,9 +12,10 @@
 }
 
 @theme {
-    --color-contrast: hsl(31, 100%, 35%);
-    --color-secondary: hsl(31, 100%, 85%);
-    --color-tertiary: hsl(31, 100%, 80%);
+    --color-contrast: hsl(43, 58%, 50%);
+    --color-secondary: hsl(55, 58%, 92%);
+    --color-tertiary: hsl(45, 71%, 56%);
+    --color-heavy: hsl(41, 63%, 43%);
 }
 
 @theme inline {
